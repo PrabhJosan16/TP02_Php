@@ -1,24 +1,27 @@
 
-<?php $titre = "Restauration -" . $meals['detail']; ?>
+
+
+<?php $titre = 'Restauration'; ?>
 
 <?php ob_start(); ?>
- <meal>
+
+<a href="index.php?action=nouvelMeal">
+    <h2 class="titreArticle">Ajouter un Meal</h2>
+</a>
+
+<?php foreach ($meals as $meal): ?>
+  <meal>
     <header>
-	<a href="<?= "meal.php?id=" . $meal['id'] ?>">
-      <h1 class="titreBillet"><?= $meal['detail'] ?></h1>
+      <a href="<?= "index.php?action=meal&id=" . $meal['detail'] ?>">
+        <h1 class="titreBillet"><?= $meal['detail'] ?></h1>
+      </a>
       <time><?= $meal['date'] ?></time>
-	  </br> Détail de la commande <?= $meal['description'] ?>
     </header>
   </meal>
-<hr />
-<header>
-  <h1 id="titreReponses">Réponses à <?= $meals['detail']] ?></h1>
-</header>
-<?php foreach ($MealDishes as $MealDishe): ?>
-  <p><?= $MealDishe['id'] ?> dit :</p>
-  <p><?= $MealDishe['quantite'] ?></p>
+  <hr />
 <?php endforeach; ?>
 <?php $contenu = ob_get_clean(); ?>
 
 <?php require 'gabarit.php'; ?>
+
 
