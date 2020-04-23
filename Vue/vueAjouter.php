@@ -4,7 +4,7 @@
 <header>
     <h1 id="titreReponses">Ajouter un meal :</h1>
 </header>
-<form action="vueAjouter.php?action=ajouter" method="post">
+<form action="index.php?action=ajouter" method="post">
     <h2>Ajouter un article</h2>
     <h2>Ajouter un plat</h2>
 	

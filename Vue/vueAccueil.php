@@ -5,7 +5,7 @@
 
 <?php ob_start(); ?>
 
-<a href="index.php?action=nouvelMeal">
+<a href="index.php?action=nouvelMeal" >
     <h2 class="titreArticle">Ajouter un Meal</h2>
 </a>
 

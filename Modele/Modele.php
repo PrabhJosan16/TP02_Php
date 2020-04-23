@@ -11,7 +11,7 @@ function getMeals() {
 // Renvoie les informations sur un meals
 function getMeal($idMeal) {
   $bdd = getBdd();
-  $meals = $bdd->prepare('SELECT  Customer_ID as id, Meal_ID as meal_id, Date_of_meal as date, Cost_of_meal as prix, Other_Details as detail, Meal_Details as description FROM  meals ');
+  $meals = $bdd->prepare('SELECT  Customer_ID as id, Meal_ID as meal_id, Date_of_meal as date, Cost_of_meal as prix, Other_Details as detail, Meal_Details as description FROM  meals where ID=?');
   $meals->execute(array($idMeal));
   if ($meals->rowCount() == 1)
     return $meals->fetch();  // Accès à la première ligne de résultat
