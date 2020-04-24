@@ -12,7 +12,7 @@ try {
             apropos();
         } else
 
-        // Afficher un article
+        // Afficher un meal
         if ($_GET['action'] == 'meal') {
             if (isset($_GET['id'])) {
                 // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
@@ -46,23 +46,23 @@ try {
 
             // Confirmer la suppression
         } else if ($_GET['action'] == 'confirmer') {
-            if (isset($_GET['id'])) {
+            if (isset($_GET['meal_id'])) {
                 // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
-                $id = intval($_GET['id']);
-                if ($id != 0) {
-                    confirmer($id);
+                $meal_id = intval($_GET['meal_id']);
+                if ($meal_id != 0) {
+                    confirmer($meal_id);
                 } else
-                    throw new Exception("Identifiant de commentaire incorrect");
+                    throw new Exception("Identifiant de meal incorrect");
             } else
-                throw new Exception("Aucun identifiant de commentaire");
+                throw new Exception("Aucun identifiant de meal");
 
-            // Supprimer un commentaire
+            // Supprimer un meal
         } else if ($_GET['action'] == 'supprimer') {
-            if (isset($_POST['id'])) {
+            if (isset($_POST['meal_id'])) {
                 // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
-                $id = intval($_POST['id']);
-                if ($id != 0) {
-                    supprimer($id);
+                $meal_id = intval($_POST['meal_id']);
+                if ($meal_id != 0) {
+                    supprimer($meal_id);
                 } else
                     throw new Exception("Identifiant de commentaire incorrect");
             } else

@@ -12,10 +12,15 @@
 <?php foreach ($meals as $meal): ?>
   <meal>
     <header>
-      <a href="<?= "index.php?action=meal&id=" . $meal['detail'] ?>">
+      <a href="<?= "index.php?action=meal&meal_id=" . $meal['detail'] ?>">
         <h1 class="titreBillet"><?= $meal['detail'] ?></h1>
       </a>
       <time><?= $meal['date'] ?></time>
+	   <p><?= $meal['description'] ?></p>
+    <p><?= $meal['detail'] ?></p>
+	<p><a href="index.php?action=confirmer&meal_id=<?= $meal['meal_id'] ?>" >
+        [Supprimer]
+    </a>
     </header>
   </meal>
   <hr />

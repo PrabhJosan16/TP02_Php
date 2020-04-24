@@ -3,7 +3,6 @@
 // Renvoie la liste de tous les meals, triés par identifiant décroissant
 function getMeals() {
   $bdd = getBdd();
-  $bdd = new PDO('mysql:host=localhost;dbname=restauration;charset=utf8', 'root', 'passwordA2019');
   $reponse = $bdd->query('SELECT  Customer_ID as id, Meal_ID as meal_id, Date_of_meal as date, Cost_of_meal as prix, Other_Details as detail, Meal_Details as description FROM  meals ');
   return $reponse;
 }
@@ -11,7 +10,7 @@ function getMeals() {
 // Renvoie les informations sur un meals
 function getMeal($idMeal) {
   $bdd = getBdd();
-  $meals = $bdd->prepare('SELECT  Customer_ID as id, Meal_ID as meal_id, Date_of_meal as date, Cost_of_meal as prix, Other_Details as detail, Meal_Details as description FROM  meals where ID=?');
+  $meals = $bdd->prepare('SELECT  Customer_ID as id, Meal_ID as meal_id, Date_of_meal as date, Cost_of_meal as prix, Other_Details as detail, Meal_Details as description FROM  meals where meal_id=?');
   $meals->execute(array($idMeal));
   if ($meals->rowCount() == 1)
     return $meals->fetch();  // Accès à la première ligne de résultat
@@ -28,6 +27,13 @@ function setMeal($meal) {
 	return $req;
 }
 
+// Supprime un meal
+function deleteMeal($meal_id) {
+	$bdd = getBdd();
+	$requete = $bdd->prepare('SELECT * FROM meals meal_id=?');
+	$requete->execute();
+
+}
 
 
 // Renvoie la liste des dishes associés à un billet
