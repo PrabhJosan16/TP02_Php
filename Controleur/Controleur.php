@@ -28,7 +28,7 @@ function supprimer($meal_id) {
 	
         deleteMeal($meal_id);
     
-      //Recharger la page pour mettre à jour la liste des commentaires associés
+      //Recharger la page pour mettre à jour la liste des meals associés
     header('Location: index.php?action=meal&meal_id=' . $meal['meal_id']);
 }
 

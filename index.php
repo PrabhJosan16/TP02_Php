@@ -64,9 +64,9 @@ try {
                 if ($meal_id != 0) {
                     supprimer($meal_id);
                 } else
-                    throw new Exception("Identifiant de commentaire incorrect");
+                    throw new Exception("Identifiant de meal incorrect");
             } else
-                throw new Exception("Aucun identifiant de commentaire");
+                throw new Exception("Aucun identifiant de meal");
 
             // Ajouter un meal
         } else if ($_GET['action'] == 'nouvelMeal') {

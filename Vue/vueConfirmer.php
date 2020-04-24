@@ -13,12 +13,12 @@
 </meal>
 
 <form action="index.php?action=supprimer" method="post">
-    <input type="hidden" name="meal_id" value="<?= $meal['meal_id'] ?>" /><br />
+    <input type="hidden" name="idMeal" value="<?= $meal['meal_id'] ?>" /><br />
     <input type="submit" value="Oui" />
 </form>
 <form action="index.php" method="get" >
     <input type="hidden" name="action" value="meal" />
-    <input type="hidden" name="meal_id" value="<?= $meal['meal_id'] ?>" />
+    <input type="hidden" name="idMeal" value="<?= $meal['meal_id'] ?>" />
     <input type="submit" value="Annuler" />
 </form>
 <?php $contenu = ob_get_clean(); ?>

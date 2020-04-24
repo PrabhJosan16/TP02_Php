@@ -1,6 +1,3 @@
-
-
-
 <?php $titre = 'Restauration'; ?>
 
 <?php ob_start(); ?>
@@ -17,9 +14,12 @@
       </a>
       <time><?= $meal['date'] ?></time>
 	   <p><?= $meal['description'] ?></p>
-    <p><?= $meal['detail'] ?></p>
+    <p><?= $meal['prix'] ?></p>
 	<p><a href="index.php?action=confirmer&meal_id=<?= $meal['meal_id'] ?>" >
         [Supprimer]
+    </a>
+	<p><a href="index.php?action=confirmer&meal_id=<?= $meal['meal_id'] ?>" >
+        [Modifier]
     </a>
     </header>
   </meal>

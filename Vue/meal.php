@@ -3,12 +3,11 @@
 require 'Modele.php';
 
 try {
-  if (isset($_GET['id'])) {
+  if (isset($_GET['meal_id'])) {
     // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
-    $id = intval($_GET['id']);
-    if ($id != 0) {
-      $meal = getmeal($id);
-      $dishes = getDishes($id);
+    $meal_id = intval($_GET['meal_id']);
+    if ($meal_id != 0) {
+      $meal = getmeal($meal_id);
       require 'vueMeal.php';
     }
     else

@@ -5,13 +5,13 @@
     <h1 id="titreReponses">Ajouter un meal :</h1>
 </header>
 <form action="index.php?action=ajouter" method="post">
-    <h2>Ajouter un article</h2>
+ 
     <h2>Ajouter un plat</h2>
 	
         <p>
         <label for="Cost_of_meal">Coût du plat</label> :  <input type="number" name="Cost_of_meal" id="Cost_of_meal" /><br />
 		
-
+		<label for="Meal_Quantity">Quantité</label> :  <input type="number" name="Meal_Quantity" id="Meal_Quantity" /><br />
 
 		
 		
