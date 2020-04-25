@@ -30,9 +30,10 @@ function setMeal($meal) {
 // Supprime un meal
 function deleteMeal($meal_id) {
 	$bdd = getBdd();
-	$requete = $bdd->prepare('DELETE FROM meals meal_id=?');
-	$requete->execute();
+	$requete = $bdd->prepare('DELETE FROM meals WHERE meal_id = ?');
+	$requete->execute(array($meal_id));
 
+	 return $requete;
 }
 
 
