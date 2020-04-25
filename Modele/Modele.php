@@ -30,10 +30,11 @@ function setMeal($meal) {
 // Supprime un meal
 function deleteMeal($meal_id) {
 	$bdd = getBdd();
-	$requete = $bdd->prepare('SELECT * FROM meals meal_id=?');
+	$requete = $bdd->prepare('DELETE FROM meals meal_id=?');
 	$requete->execute();
 
 }
+
 
 
 // Renvoie la liste des dishes associés à un billet
