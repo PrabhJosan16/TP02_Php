@@ -46,7 +46,7 @@ function getDishes($idMeal) {
   return $dishes;
 }
 
-// Renvoie un commentaire spécifique
+// Renvoie un dishes spécifique
 function getDishe($id) {
     $bdd = getBdd();
     $dishe = $bdd->prepare('select * from meal_dishes');
@@ -58,7 +58,7 @@ function getDishe($id) {
     return $dishe;
 }
 
-// Ajoute un commentaire associés à un article
+// Ajoute un dishes associés à un article
 function setDishe($dishe) {
     $bdd = getBdd();
     $req = $bdd->prepare('INSERT INTO meals ( Cost_of_meal, Other_Details, Meal_Details) VALUES(?,?,?)');
