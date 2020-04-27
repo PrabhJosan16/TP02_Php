@@ -24,6 +24,8 @@ function setMeal($meal) {
     $bdd = getBdd();
    $req = $bdd->prepare('INSERT INTO meals ( Cost_of_meal, Other_Details, Meal_Details) VALUES(?,?,?)');
 	$req->execute(array($meal['Cost_of_meal'], $meal['Other_Details'],$meal['Meal_Details']));
+
+	
 	return $req;
 }
 
@@ -39,13 +41,11 @@ function deleteMeal($meal_id) {
 
 function modifyMeal($meal_id) {
 	$bdd = getBdd();
-	$req = $bdd->prepare('UPDATE meals SET Cost_of_meal = ?, Other_Details = ?, Meal_Details = ? WHERE Meal_ID = ?');
+	$req = $bdd->prepare('UPDATE meals SET Cost_of_meal = ?, Other_Details = ?, Meal_Details = ? WHERE meal_id = ?');
 
-
-	$req->execute(array( $_POST['Cost_of_meal'], $_POST['Other_Details'], $_POST['Meal_Details'], $_POST['Meal_ID']));
+	$req->execute(array( $_POST['Cost_of_meal'], $_POST['Other_Details'], $_POST['Meal_Details'], $_POST['meal_id']));
 	
-//		  var_dump($req);
- // die(); // pour arrêter PHP à cet endroit
+
 
 	 return $req;
 }
@@ -53,30 +53,30 @@ function modifyMeal($meal_id) {
 
 
 // Renvoie la liste des dishes associés à un billet
-function getDishes($idMeal) {
+function getCustomers($idMeal) {
   $bdd = getBdd();
-  $dishes = $bdd->prepare('select Meal_ID as id, Meal_item_ID as item_id, Quantity as quantite from meal_dishes');
-  $dishes->execute(array(idMeal));
-  return $dishes;
+  $customer = $bdd->prepare('select Customer_ID as id, Customer_Details as client_detail from customer');
+  $customer->execute(array(idMeal));
+  return $customer;
 }
 
 // Renvoie un dishes spécifique
-function getDishe($id) {
+function getCustomer($id) {
     $bdd = getBdd();
-    $dishe = $bdd->prepare('select * from meal_dishes');
-    $dishe->execute(array($id));
-    if ($dishe->rowCount() == 1)
-        return $dishe->fetch();  // Accès à la première ligne de résultat
+    $customer = $bdd->prepare('select * from customer');
+    $customer->execute(array($id));
+    if ($customer->rowCount() == 1)
+        return $customer->fetch();  // Accès à la première ligne de résultat
     else
-        throw new Exception("Aucun dishe ne correspond à l'identifiant '$id'");
-    return $dishe;
+        throw new Exception("Aucun customer ne correspond à l'identifiant '$id'");
+    return $customer;
 }
 
 // Ajoute un dishes associés à un article
-function setDishe($dishe) {
+function setCustomer($customer) {
     $bdd = getBdd();
-    $req = $bdd->prepare('INSERT INTO meals ( Cost_of_meal, Other_Details, Meal_Details) VALUES(?,?,?)');
-	$req->execute(array($_POST['Cost_of_meal'], $_POST['Other_Details'],$_POST['Meal_Details']));
+    $req = $bdd->prepare('INSERT INTO customer ( Customer_ID, Customer_Details) VALUES(?,?)');
+	$req->execute(array($_POST['Customer_ID'], $_POST['Customer_Details']));
     return $req;
 }
 

@@ -28,6 +28,8 @@ function supprimer($meal_id) {
 		
 		$meal = getMeal($meal_id);
 		
+		
+		
         deleteMeal($meal_id);
     
       //Recharger la page pour mettre à jour la liste des meals associés
@@ -39,7 +41,12 @@ function modifier($meal_id) {
 		
 		$meal = getMeal($meal_id);
 		
+		
+
+		
         modifyMeal($meal_id);
+		
+
     
       //Recharger la page pour mettre à jour la liste des meals associés
 
