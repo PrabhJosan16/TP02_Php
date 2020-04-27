@@ -67,6 +67,32 @@ try {
                     throw new Exception("Identifiant de meal incorrect");
             } else
                 throw new Exception("Aucun identifiant de meal");
+			
+			
+			     // Confirmer la modification
+        } else if ($_GET['action'] == 'confirmerModifier') {
+            if (isset($_GET['meal_id'])) {
+                // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
+                $meal_id = intval($_GET['meal_id']);
+                if ($meal_id != 0) {
+                    confirmerModification($meal_id);
+                } else
+                    throw new Exception("Identifiant de meal incorrect");
+            } else
+                throw new Exception("Aucun identifiant de meal");
+
+            // modifier un meal
+        } else if ($_GET['action'] == 'modification') {
+            if (isset($_POST['meal_id'])) {
+                // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
+                $meal_id = intval($_POST['meal_id']);
+                if ($meal_id != 0) {
+                    modifier($meal_id);
+                } else
+                    throw new Exception("Identifiant de meal incorrect");
+            } else
+                throw new Exception("Aucun identifiant de meal");
+			
 
             // Ajouter un meal
         } else if ($_GET['action'] == 'nouvelMeal') {

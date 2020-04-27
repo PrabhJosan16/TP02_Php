@@ -31,7 +31,19 @@ function supprimer($meal_id) {
         deleteMeal($meal_id);
     
       //Recharger la page pour mettre à jour la liste des meals associés
-    header('Location: index.php?action=meal&meal_id=' . $meal['meal_id']);
+   header('Location: index.php');
+}
+
+// modifier un meal
+function modifier($meal_id) {
+		
+		$meal = getMeal($meal_id);
+		
+        modifyMeal($meal_id);
+    
+      //Recharger la page pour mettre à jour la liste des meals associés
+
+   header('Location: index.php');
 }
 
 
@@ -48,6 +60,11 @@ function confirmer($meal_id) {
     require 'Vue/vueConfirmer.php';
 }
 
+function confirmerModification($meal_id) {
+    // Lire meal e à l'aide du modèle
+    $meal = getMeal($meal_id);
+    require 'Vue/vueConfirmerModifier.php';
+}
 
 
 // Affiche une erreur

@@ -30,10 +30,24 @@ function setMeal($meal) {
 // Supprime un meal
 function deleteMeal($meal_id) {
 	$bdd = getBdd();
-	$requete = $bdd->prepare('DELETE FROM meals WHERE meal_id = ?');
-	$requete->execute(array($meal_id));
+	$req = $bdd->prepare('DELETE FROM meals WHERE meal_id = ?');
+	$req->execute(array($meal_id));
+	
 
-	 return $requete;
+	 return $req;
+}
+
+function modifyMeal($meal_id) {
+	$bdd = getBdd();
+	$req = $bdd->prepare('UPDATE meals SET Cost_of_meal = ?, Other_Details = ?, Meal_Details = ? WHERE Meal_ID = ?');
+
+
+	$req->execute(array( $_POST['Cost_of_meal'], $_POST['Other_Details'], $_POST['Meal_Details'], $_POST['Meal_ID']));
+	
+//		  var_dump($req);
+ // die(); // pour arrêter PHP à cet endroit
+
+	 return $req;
 }
 
 

@@ -18,7 +18,7 @@
 	<p><a href="index.php?action=confirmer&meal_id=<?= $meal['meal_id'] ?>" >
         [Supprimer]
     </a>
-	<p><a href="index.php?action=confirmer&meal_id=<?= $meal['meal_id'] ?>" >
+	<p><a href="index.php?action=confirmerModifier&meal_id=<?= $meal['meal_id'] ?>" >
         [Modifier]
     </a>
     </header>
