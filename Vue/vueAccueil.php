@@ -2,6 +2,10 @@
 
 <?php ob_start(); ?>
 
+<a href="index.php?action=apropos" >
+    <h2 class="titreArticle">À propos</h2>
+</a>
+
 <a href="index.php?action=nouvelMeal" >
     <h2 class="titreArticle">Ajouter un Meal</h2>
 </a>
@@ -9,12 +13,14 @@
 <?php foreach ($meals as $meal): ?>
   <meal>
     <header>
-      <a href="<?= "index.php?action=meal&meal_id=" . $meal['detail'] ?>">
+      <a /*href="<?= "index.php?action=meal&meal_id=" . $meal['meal_id'] ?>*/">
         <h1 class="titreBillet"><?= $meal['detail'] ?></h1>
       </a>
       <time><?= $meal['date'] ?></time>
 	   <p><?= $meal['description'] ?></p>
     <p><?= $meal['prix'] ?></p>
+
+
 	<p><a href="index.php?action=confirmer&meal_id=<?= $meal['meal_id'] ?>" >
         [Supprimer]
     </a>
@@ -23,8 +29,10 @@
     </a>
     </header>
   </meal>
+ 
   <hr />
 <?php endforeach; ?>
+
 <?php $contenu = ob_get_clean(); ?>
 
 <?php require 'gabarit.php'; ?>

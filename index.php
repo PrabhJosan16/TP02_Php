@@ -1,5 +1,3 @@
-
-
 <?php
 
 require 'Controleur/Controleur.php';
@@ -14,35 +12,35 @@ try {
 
         // Afficher un meal
         if ($_GET['action'] == 'meal') {
-            if (isset($_GET['id'])) {
+            if (isset($_GET['meal_id'])) {
                 // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
-                $id = intval($_GET['id']);
-                if ($id != 0) {
+                $meal_id = intval($_GET['meal_id']);
+                if ($meal_id != 0) {
                     $erreur = isset($_GET['erreur']) ? $_GET['erreur'] : '';
-                    meal($id, $erreur);
+                    meal($meal_id, $erreur);
                 } else
                     throw new Exception("Identifiant d'meal incorrect");
             } else
                 throw new Exception("Aucun identifiant d'meal");
 
-            // Ajouter un dishes
-        } else if ($_GET['action'] == 'dishe') {
-            if (isset($_POST['meal_id'])) {
+            // Ajouter un customer
+        } else if ($_GET['action'] == 'customer') {
+            if (isset($_POST['Customer_ID'])) {
                 // intval renvoie la valeur numérique du paramètre ou 0 en cas d'échec
-                $id = intval($_POST['meal_id']);
-                if ($id != 0) {
+                $Customer_ID = intval($_POST['meal_id']);
+                if ($Customer_ID != 0) {
                     // vérifier si l'article existe;
-                    $meal = getMeal($id);
+                    $customer = getCustomer($Customer_ID);
                     // Récupérer les données du formulaire
-                    $dishe = $_POST;
-                    // Ajuster la valeur de la case à cocher
+                    $customer = $_POST;
                   
-                    //Réaliser l'action dishe du contrôleur
-                    dishe($dishe);
+                  
+                    //Réaliser l'action customer du contrôleur
+                    Customer($customer);
                 } else
-                    throw new Exception("Identifiant d'article incorrect");
+                    throw new Exception("Identifiant de customer incorrect");
             } else
-                throw new Exception("Aucun identifiant d'article");
+                throw new Exception("Aucun identifiant de customer");
 
             // Confirmer la suppression
         } else if ($_GET['action'] == 'confirmer') {

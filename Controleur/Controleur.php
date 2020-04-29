@@ -8,18 +8,20 @@ function accueil() {
   require 'Vue/vueAccueil.php';
 }
 
-// Affiche les détails sur un article
-function meal($idMeal, $erreur) {
-    $meal = getMeal($idMeal);
+
+
+// Affiche les détails sur un meal
+function meal($meal_id, $erreur) {
+    $meal = getMeal($meal_id);
   
     require 'Vue/vueMeal.php';
 }
 
-// Affiche la liste de tous les articles du blog
+// Affiche la liste de tous les articles du Retaurant
 function apropos() {
-    require 'Vue/vueApropos.php';
+    require 'Vue/vueapropos.php';
 }
-
+//ajout d'un nouveau meal
 function nouvelMeal() {
     require 'Vue/vueAjouter.php';
 }
@@ -40,33 +42,28 @@ function supprimer($meal_id) {
 function modifier($meal_id) {
 		
 		$meal = getMeal($meal_id);
-		
-		
 
-		
         modifyMeal($meal_id);
-		
 
-    
       //Recharger la page pour mettre à jour la liste des meals associés
 
    header('Location: index.php');
 }
 
-
+//ajoute un meal
 function ajouter($meal) {
    
        setMeal($meal);
     
     header('Location: index.php');
 }
-
+//confirmation pour suppimer 
 function confirmer($meal_id) {
     // Lire meal e à l'aide du modèle
     $meal = getMeal($meal_id);
     require 'Vue/vueConfirmer.php';
 }
-
+//confirmation pour modifier
 function confirmerModification($meal_id) {
     // Lire meal e à l'aide du modèle
     $meal = getMeal($meal_id);

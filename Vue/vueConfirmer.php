@@ -1,4 +1,4 @@
-<?php "Supprimer" ?>
+<?php $titre = 'Restauration - Supprimer'; ?>
 <?php ob_start(); ?>
 <meal>
     <header>

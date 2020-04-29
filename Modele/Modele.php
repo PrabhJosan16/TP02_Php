@@ -1,6 +1,6 @@
 <?php
 
-// Renvoie la liste de tous les meals, triés par identifiant décroissant
+// Renvoie la liste de tous les meals
 function getMeals() {
   $bdd = getBdd();
   $reponse = $bdd->query('SELECT  Customer_ID as id, Meal_ID as meal_id, Date_of_meal as date, Cost_of_meal as prix, Other_Details as detail, Meal_Details as description FROM  meals ');
@@ -38,7 +38,7 @@ function deleteMeal($meal_id) {
 
 	 return $req;
 }
-
+//modifie meal
 function modifyMeal($meal_id) {
 	$bdd = getBdd();
 	$req = $bdd->prepare('UPDATE meals SET Cost_of_meal = ?, Other_Details = ?, Meal_Details = ? WHERE meal_id = ?');
@@ -52,33 +52,29 @@ function modifyMeal($meal_id) {
 
 
 
-// Renvoie la liste des dishes associés à un billet
+// Renvoie la liste des customers associés à un meal
 function getCustomers($idMeal) {
-  $bdd = getBdd();
-  $customer = $bdd->prepare('select Customer_ID as id, Customer_Details as client_detail from customer');
-  $customer->execute(array(idMeal));
-  return $customer;
+    $bdd = getBdd();
+    $customers = $bdd->prepare('select * from customers'
+            . ' where meal_id = ?');
+    $customers->execute(array($idMeal));
+    return $customers;
 }
 
-// Renvoie un dishes spécifique
-function getCustomer($id) {
+// Renvoie un customer spécifique
+function getCommentaire($Customer_ID) {
     $bdd = getBdd();
-    $customer = $bdd->prepare('select * from customer');
-    $customer->execute(array($id));
+    $customer = $bdd->prepare('select * from customers'
+            . ' where Customer_ID = ?');
+    $customer->execute(array($Customer_ID));
     if ($customer->rowCount() == 1)
         return $customer->fetch();  // Accès à la première ligne de résultat
     else
-        throw new Exception("Aucun customer ne correspond à l'identifiant '$id'");
+        throw new Exception("Aucun customer ne correspond à l'identifiant '$Customer_ID'");
     return $customer;
 }
 
-// Ajoute un dishes associés à un article
-function setCustomer($customer) {
-    $bdd = getBdd();
-    $req = $bdd->prepare('INSERT INTO customer ( Customer_ID, Customer_Details) VALUES(?,?)');
-	$req->execute(array($_POST['Customer_ID'], $_POST['Customer_Details']));
-    return $req;
-}
+
 
 
 

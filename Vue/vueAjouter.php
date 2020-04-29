@@ -11,7 +11,7 @@
         <p>
         <label for="Cost_of_meal">Coût du plat</label> :  <input type="number" name="Cost_of_meal" id="Cost_of_meal" /><br />
 		
-		<label for="Meal_Quantity">Quantité</label> :  <input type="number" name="Meal_Quantity" id="Meal_Quantity" /><br />
+		
 
 		
 		
@@ -41,3 +41,4 @@
 
 <?php require 'Vue/gabarit.php'; ?>
 
+ // <label for="Meal_Quantity">Quantité</label> :  <input type="number" name="Meal_Quantity" id="Meal_Quantity" /><br />
