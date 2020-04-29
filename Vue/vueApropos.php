@@ -31,6 +31,11 @@
         <li>On peut modifier un plat après confirmation.<br>
         </li>
     </ul>
+	<ul>
+        <li>Lien vers Mon gitHub: </li>
+        <a href="https://github.com/PrabhJosan16/TP02_Php"> Lien GitHub</a>
+
+    </ul>
 </ul>
 <br>
 
