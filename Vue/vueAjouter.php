@@ -1,6 +1,5 @@
 <?php $titre = "Restauration - Ajouter un Meal"; ?>
 
-<?php ob_start(); ?>
 <header>
     <h1 id="titreReponses">Ajouter un meal :</h1>
 </header>
@@ -37,8 +36,6 @@
 	</p>
 </form>
 
-<?php $contenu = ob_get_clean(); ?>
 
-<?php require 'Vue/gabarit.php'; ?>
 
- // <label for="Meal_Quantity">Quantité</label> :  <input type="number" name="Meal_Quantity" id="Meal_Quantity" /><br />
+

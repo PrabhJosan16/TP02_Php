@@ -35,29 +35,44 @@ class ControleurMeal {
 
 // Enregistre le nouvel meal et retourne à la liste des meals
     public function ajouter($meal) {
-        if (H204A4_PUBLIC) {
-            $_SESSION['h204a4message'] = "Ajouter un meal n'est pas permis en démonstration";
-        } else {
-            $this->meal->setArticle($meal);
-        }
+       
+        $this->meal->setMeal($meal);
+       
         $this->meals();
     }
 
 // Modifier un meal existant    
-    public function modifierArticle($id) {
-        $meal = $this->meal->getMeal($id);
-        $vue = new Vue("ModifierArticle");
+    public function confirmerModifier($idMeal) {
+        $meal = $this->meal->getMeal($idMeal);
+        $vue = new Vue("confirmerModifier");
+        $vue->generer(['meal' => $meal]);
+    }
+	
+	// Modifier un meal existant    
+    public function confirmer($idMeal) {
+        $meal = $this->meal->getMeal($idMeal);
+        $vue = new Vue("Confirmer");
         $vue->generer(['meal' => $meal]);
     }
 
 // Enregistre l'meal modifié et retourne à la liste des meals
-    public function miseAJourArticle($meal) {
-        if (H204A4_PUBLIC) {
-            $_SESSION['h204a4message'] = "Moddifier un meal n'est pas permis en démonstration";
-        } else {
-            $this->meal->updateArticle($meal);
-        }
+    public function modification($meal) {
+      
+        $this->meal->modifyMeal($meal);
+        
         $this->meals();
     }
+	
+	// Supprimer un commentaire
+    public function supprimer($meal_id) {
+     
+       
+        
+            
+            $this->meal->deleteMeal($meal_id);
+       
+        $this->meals();
+    }
+
 
 }

@@ -27,28 +27,27 @@ class Meal extends Modele {
 	// Renvoie la liste de tous les meals, triés par identifiant décroissant
 	function setMeal($meal) {
 		
-	    $sql = 'INSERT INTO meals ( Cost_of_meal, Other_Details, Meal_Details) VALUES(?,?,?)';
-		$result = $this->executerRequete($sql, [$meal['Cost_of_meal'], $meal['Other_Details'],$meal['Meal_Details']]);
+	    $sql = 'INSERT INTO meals ( Cost_of_meal, Other_Details, Meal_Details, meal_id) VALUES(?,?,?,?)';
+		$result = $this->executerRequete($sql, [$meal['Cost_of_meal'], $meal['Other_Details'],$meal['Meal_Details'], $meal[meal_id]]);
 
         return $result;
 
 	}
 
 	// Supprime un meal
-	function deleteMeal($meal_id) {
-		$bdd = getBdd();
-		$req = $bdd->prepare('DELETE FROM meals WHERE meal_id = ?');
-		$req->execute(array($meal_id));
-		
-
-		 return $req;
+	function deleteMeal($meal) {
+	
+		 $sql =  'DELETE FROM meals WHERE meal_id = ?';
+		 $result = $this->executerRequete($sql, [$meal_id]);
+		 return $result;
 	}
+		
 	//modifie meal
-	function modifyMeal($meal_id) {
+	function modifyMeal($meal) {
 		
 		 $sql = 'UPDATE meals SET Cost_of_meal = ?, Other_Details = ?, Meal_Details = ? WHERE meal_id = ?';
 
-		$result = $this->executerRequete($sql, [$meal['Cost_of_meal'], $meal['Other_Details'], $meal['Meal_Details'], $meal['meal_id']]);
+		$result = $this->executerRequete($sql, [$meal['Cost_of_meal'], $meal['Other_Details'], $meal['Meal_Details'], $meal[meal_id]]);
 		
 
 
@@ -57,32 +56,4 @@ class Meal extends Modele {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }
