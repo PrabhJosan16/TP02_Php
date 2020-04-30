@@ -27,12 +27,14 @@ class Meal extends Modele {
 	// Renvoie la liste de tous les meals, triés par identifiant décroissant
 	function setMeal($meal) {
 		
-	    $sql = 'INSERT INTO meals ( Cost_of_meal, Other_Details, Meal_Details, meal_id) VALUES(?,?,?,?)';
-		$result = $this->executerRequete($sql, [$meal['Cost_of_meal'], $meal['Other_Details'],$meal['Meal_Details'], $meal[meal_id]]);
+	    $sql = 'INSERT INTO meals ( Cost_of_meal, Other_Details, Meal_Details) VALUES(?,?,?)';
+		$result = $this->executerRequete($sql, [$meal['Cost_of_meal'], $meal['Other_Details'], $meal['Meal_Details']]);
 
         return $result;
 
 	}
+	
+
 
 	// Supprime un meal
 	function deleteMeal($meal) {

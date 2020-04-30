@@ -33,13 +33,16 @@ class ControleurMeal {
         $vue->generer();
     }
 
-// Enregistre le nouvel meal et retourne à la liste des meals
+
+	
+	// Enregistre le nouvel meal et retourne à la liste des articles
     public function ajouter($meal) {
-       
-        $this->meal->setMeal($meal);
-       
+
+            $this->meal->setMeal($meal);
+        
         $this->meals();
     }
+	
 
 // Modifier un meal existant    
     public function confirmerModifier($idMeal) {
@@ -63,7 +66,7 @@ class ControleurMeal {
         $this->meals();
     }
 	
-	// Supprimer un commentaire
+	// Supprimer un meal
     public function supprimer($meal_id) {
      
        
