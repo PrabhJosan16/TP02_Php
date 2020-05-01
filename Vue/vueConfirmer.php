@@ -1,5 +1,5 @@
 <?php $titre = 'Restauration - Supprimer'; ?>
-<?php ob_start(); ?>
+
 <meal>
     <header>
         <p><h1>
@@ -21,7 +21,5 @@
 		<input type="submit" value="Annuler" />
 		</p>
 		</form>
-<?php $contenu = ob_get_clean(); ?>
 
-<?php require 'Vue/gabarit.php'; ?>
 

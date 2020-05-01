@@ -69,12 +69,12 @@ class ControleurMeal {
 	// Supprimer un meal
     public function supprimer($meal_id) {
      
-       
+        $meal = $this->meal->getMeal($meal_id);
         
             
-            $this->meal->deleteMeal($meal_id);
+        $this->meal->deleteMeal($meal_id);
        
-        $this->meals();
+        header('Location: index.php');
     }
 
 

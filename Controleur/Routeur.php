@@ -61,18 +61,10 @@ class Routeur {
                     $this->ctrlMeal->nouvelMeal();
 
 					} else if ($_GET['action'] == 'ajouter') {
-                    // Tester l'existence des paramètres requis
-                    $meal_id = intval($this->getParametre($_POST, 'meal_id'));
-                    if ($meal_id != 0) {
-                        $this->getParametre($_POST, 'Cost_of_meal');
-                        $this->getParametre($_POST, 'Other_Details');
-                        $this->getParametre($_POST, 'Meal_Details');
-
-                       
+   
                         // Enregistrer l'meal
                         $this->ctrlMeal->ajouter($_POST);
-                    } else
-                        throw new Exception("Identifiant d'utilisateur non valide");
+                    
 					
 					
                 } else if ($_GET['action'] == 'modification') {
