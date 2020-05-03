@@ -1,5 +1,5 @@
 <?php $titre = 'Restauration - Modifier'; ?>
-<?php ob_start(); ?>
+
 <meal>
     <header>
         <p><h1>
@@ -54,8 +54,6 @@
 		<p>
 		<input type="submit" value="Annuler" />
 		</p>
-		</form>
-<?php $contenu = ob_get_clean(); ?>
+	</form>
 
-<?php require 'Vue/gabarit.php'; ?>
 
