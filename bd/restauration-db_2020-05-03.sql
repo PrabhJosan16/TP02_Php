@@ -2,10 +2,10 @@
 -- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 20 fév. 2020 à 15:23
--- Version du serveur :  8.0.18
--- Version de PHP :  7.4.0
+-- Host: 127.0.0.1:3306
+-- Generation Time: May 03, 2020 at 05:44 PM
+-- Server version: 8.0.18
+-- PHP Version: 7.4.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,34 +19,33 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `restauration`
+-- Database: `restauration`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `customers`
+-- Table structure for table `customers`
 --
 
 CREATE TABLE `customers` (
   `Customer_ID` int(155) NOT NULL,
-  `Customer_Details` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  `Customer_Details` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `contact` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Clients';
 
 --
--- Déchargement des données de la table `customers`
+-- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`Customer_ID`, `Customer_Details`) VALUES
-(1, 'Client 1'),
-(2, 'Client 2'),
-(6, 'allo'),
-(7, 'ss');
+INSERT INTO `customers` (`Customer_ID`, `Customer_Details`, `contact`) VALUES
+(8, 'John', 'john@gmail.com'),
+(9, 'Daniel', 'daniel@gmail.com');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `meals`
+-- Table structure for table `meals`
 --
 
 CREATE TABLE `meals` (
@@ -60,22 +59,18 @@ CREATE TABLE `meals` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `meals`
+-- Dumping data for table `meals`
 --
 
 INSERT INTO `meals` (`Meal_ID`, `Customer_ID`, `Staff_ID`, `Date_of_meal`, `Cost_of_meal`, `Other_Details`, `Meal_Details`) VALUES
-(2, 1, 1, '2020-02-13 10:32:56', '25', 'Plat Principale', 'steak avec des légumes et boisson non alcoolisée inclu '),
-(3, 2, 2, '2020-02-19 00:00:00', '7', 'Entrée', 'Frites'),
-(11, NULL, NULL, '2020-02-20 09:08:29', '25', 'Plat Principale', 'Pizza '),
-(12, NULL, NULL, '2020-02-20 09:09:43', '15', 'Plat Principale', 'Steak'),
-(15, NULL, NULL, '2020-02-20 09:42:53', '25', 'Dessert', 'gateaux'),
-(16, NULL, NULL, '2020-02-20 09:44:53', '12', 'Salade', 'césar'),
-(17, NULL, NULL, '2020-02-20 09:45:22', '3', 'Entrée', 'allo');
+(18, NULL, NULL, '2020-03-06 13:56:05', '15', 'Dessert', 'Gateau à la vanille'),
+(19, NULL, NULL, '2020-04-22 20:32:05', '4', 'Entrée', 'Frites'),
+(20, NULL, NULL, '2020-04-24 16:47:51', '25', 'Plat Principale', 'Pizza au fromage');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `meal_dishes`
+-- Table structure for table `meal_dishes`
 --
 
 CREATE TABLE `meal_dishes` (
@@ -84,10 +79,17 @@ CREATE TABLE `meal_dishes` (
   `Quantity` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `meal_dishes`
+--
+
+INSERT INTO `meal_dishes` (`Meal_ID`, `Menu_item_ID`, `Quantity`) VALUES
+(3, 1, 1);
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `menus`
+-- Table structure for table `menus`
 --
 
 CREATE TABLE `menus` (
@@ -101,7 +103,7 @@ CREATE TABLE `menus` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `menu_items`
+-- Table structure for table `menu_items`
 --
 
 CREATE TABLE `menu_items` (
@@ -114,7 +116,7 @@ CREATE TABLE `menu_items` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ref_datff_roles`
+-- Table structure for table `ref_datff_roles`
 --
 
 CREATE TABLE `ref_datff_roles` (
@@ -125,7 +127,7 @@ CREATE TABLE `ref_datff_roles` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `staff`
+-- Table structure for table `staff`
 --
 
 CREATE TABLE `staff` (
@@ -137,17 +139,17 @@ CREATE TABLE `staff` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `customers`
+-- Indexes for table `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`Customer_ID`);
 
 --
--- Index pour la table `meals`
+-- Indexes for table `meals`
 --
 ALTER TABLE `meals`
   ADD PRIMARY KEY (`Meal_ID`),
@@ -155,90 +157,84 @@ ALTER TABLE `meals`
   ADD KEY `Customer_ID_2` (`Customer_ID`);
 
 --
--- Index pour la table `meal_dishes`
+-- Indexes for table `meal_dishes`
 --
 ALTER TABLE `meal_dishes`
   ADD KEY `Meal_ID` (`Meal_ID`);
 
 --
--- Index pour la table `menus`
+-- Indexes for table `menus`
 --
 ALTER TABLE `menus`
   ADD PRIMARY KEY (`Menu_ID`);
 
 --
--- Index pour la table `menu_items`
+-- Indexes for table `menu_items`
 --
 ALTER TABLE `menu_items`
   ADD PRIMARY KEY (`Menu_items_ID`);
 
 --
--- Index pour la table `ref_datff_roles`
+-- Indexes for table `ref_datff_roles`
 --
 ALTER TABLE `ref_datff_roles`
   ADD PRIMARY KEY (`Staff_Role_Code`);
 
 --
--- Index pour la table `staff`
+-- Indexes for table `staff`
 --
 ALTER TABLE `staff`
   ADD PRIMARY KEY (`Staff_ID`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `customers`
+-- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `Customer_ID` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Customer_ID` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT pour la table `meals`
+-- AUTO_INCREMENT for table `meals`
 --
 ALTER TABLE `meals`
-  MODIFY `Meal_ID` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `Meal_ID` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT pour la table `menus`
+-- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
   MODIFY `Menu_ID` int(155) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `menu_items`
+-- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
   MODIFY `Menu_items_ID` int(155) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `ref_datff_roles`
+-- AUTO_INCREMENT for table `ref_datff_roles`
 --
 ALTER TABLE `ref_datff_roles`
   MODIFY `Staff_Role_Code` int(155) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `staff`
+-- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
   MODIFY `Staff_ID` int(155) NOT NULL AUTO_INCREMENT;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `meals`
+-- Constraints for table `meals`
 --
 ALTER TABLE `meals`
-  ADD CONSTRAINT `meals_ibfk_1` FOREIGN KEY (`Customer_ID`) REFERENCES `customers` (`Customer_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Contraintes pour la table `meal_dishes`
---
-ALTER TABLE `meal_dishes`
-  ADD CONSTRAINT `meal_dishes_ibfk_1` FOREIGN KEY (`Meal_ID`) REFERENCES `meals` (`Meal_ID`);
+  ADD CONSTRAINT `id` FOREIGN KEY (`Customer_ID`) REFERENCES `customers` (`Customer_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,6 +1,6 @@
 <?php $titre = 'Restauration - À propos'; ?>
 
-<?php ob_start(); ?>
+
 <ul>
    <h1>Qui sommes nous?</h1>
 			
@@ -57,6 +57,3 @@
         </td>
     </tr>
 </table>
-<?php $contenu = ob_get_clean(); ?>
-
-<?php require 'Vue/gabarit.php'; ?>
