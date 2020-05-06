@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 if (isset($_GET['test'])) {
     if ($_GET['test'] == 'modeleMeal') {
         require 'Tests/Modeles/testMeal.php';
@@ -15,7 +15,7 @@ if (isset($_GET['test'])) {
     } else if ($_GET['test'] == 'vueErreur') {
         require 'Tests/Vues/testVueErreur.php';
     } else {
-        echo '<h3>Test inexistant!!!</h3>'; 
+        echo '<h3>Test inexistant!!!</h3>';
     }
 }
 ?>
