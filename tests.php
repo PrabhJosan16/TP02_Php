@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 if (isset($_GET['test'])) {
     if ($_GET['test'] == 'modeleMeal') {
-        require 'Tests/Modeles/testMeal.php';
+        require 'Tests/Modeles/testMeal.php'; 
 		
     } else if ($_GET['test'] == 'vueMeals') {
         require 'Tests/Vues/testVueMeals.php';
