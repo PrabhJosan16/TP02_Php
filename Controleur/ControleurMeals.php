@@ -4,7 +4,7 @@ require_once 'Framework/Controleur.php';
 require_once 'Modele/Meal.php';
 
 
-class ControleurMeal {
+class ControleurMeals extends Controleur {
 
     private $meal;
     private $customer;
@@ -12,6 +12,12 @@ class ControleurMeal {
     public function __construct() {
         $this->meal = new Meal();
       
+    }
+	
+	// Affiche la liste de tous les meals du blog
+    public function index() {
+        $meals = $this->meal->getMeals();
+        $this->genererVue(['meals' => $meals]);
     }
 
 // Affiche la liste de tous les meals du blog
