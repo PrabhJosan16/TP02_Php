@@ -7,7 +7,7 @@ require_once 'Modele/Meal.php';
 class ControleurMeals extends Controleur {
 
     private $meal;
-    private $customer;
+  
 
     public function __construct() {
         $this->meal = new Meal();

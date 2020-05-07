@@ -1,9 +1,9 @@
-<?php $titre = "Restauration - Ajouter un Meal"; ?>
+<?php $this->titre = "Restauration - Ajouter un Meal"; ?>
 
 <header>
     <h1 id="titreReponses">Ajouter un meal :</h1>
 </header>
-<form action="index.php?action=ajouter" method="post">
+<form action="Meals/nouvelMeal" method="post">
  
     <h2>Ajouter un plat</h2>
 	
