@@ -12,11 +12,11 @@
     </header>
 </meal>
 
-<form action="index.php?action=supprimer" method="post">
-    <input type="hidden" name="meal_id" value="<?= $meal['meal_id'] ?>" /><br />
+<form action="Meals/supprimer" method="post">
+	 <input type="hidden" name="meal_id" value="<?= $this->nettoyer($meal['meal_id']) ?>" /><br />
     <input type="submit" value="Oui" />
 </form>
-<form action="index.php" method="post">
+<form action="Meals/lire" method="post">
 		<p>
 		<input type="submit" value="Annuler" />
 		</p>
