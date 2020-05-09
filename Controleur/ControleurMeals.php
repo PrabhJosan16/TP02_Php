@@ -61,30 +61,34 @@ class ControleurMeals extends Controleur {
         $id = $this->requete->getParametreId('id');
         // Lire le commentaire à l'aide du modèle
         $meal = $this->meal->getMeal($id);
-         $this->genererVue(['meal' => $meal]);
+        $this->genererVue(['meal' => $meal]);
     }
 	
 	// Enregistre l'meal modifié et retourne à la liste des meals
     public function miseAJour() {
        
-            $meal['meal_id'] = $this->requete->getParametreId('meal_id');
+            $meal['Meal_ID'] = $this->requete->getParametre('Meal_ID');
             $meal['Cost_of_meal'] = $this->requete->getParametre('Cost_of_meal');
             $meal['Other_Details'] = $this->requete->getParametre('Other_Details');
             $meal['Meal_Details'] = $this->requete->getParametre('Meal_Details');
-            $this->meal->modifyMeal($meal);
+            $this->meal->updateMeal($meal);
         
         $this->executerAction('index');
     }
 
 	
-	// Supprimer un meal
-    public function supprimer($meal_id) {
-     
-        $meal = $this->meal->getMeal($meal_id);
-        
-            
-        $this->meal->deleteMeal($meal_id);
-       
-        header('Location: index.php');
+
+	
+	// Supprimer un commentaire
+    public function supprimer() {
+        $id = $this->requete->getParametreId("Meal_ID");
+        // Lire le commentaire afin d'obtenir le id de l'article associé
+        $meal = $this->meal->getMeal($id);
+        // Supprimer le commentaire à l'aide du modèle
+        $this->meal->deleteMeal($id);
+        //Recharger la page pour mettre à jour la liste des commentaires associés
+        $this->executerAction('index');
     }
+	
+
 }

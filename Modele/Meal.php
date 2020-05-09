@@ -15,7 +15,7 @@ class Meal extends Modele {
 	// Renvoie les informations sur un meals
 	
 	    public function getMeal($idMeal) {
-       $sql = 'SELECT  Customer_ID , Meal_ID , Date_of_meal , Cost_of_meal , Other_Details , Meal_Details  FROM  meals where meal_id=?';
+       $sql = 'SELECT  Customer_ID , Meal_ID , Date_of_meal , Cost_of_meal , Other_Details , Meal_Details  FROM  meals where Meal_ID=?';
         $meal = $this->executerRequete($sql, array($idMeal));
         if ($meal->rowCount() > 0)
             return $meal->fetch();  // Accès à la première ligne de résultat
@@ -37,21 +37,21 @@ class Meal extends Modele {
 
 
 	// Supprime un meal
-	function deleteMeal($meal_id) {
+	function deleteMeal($Meal_ID) {
 	
-		 $sql =  'DELETE FROM meals WHERE meal_id = ?';
-		 $result = $this->executerRequete($sql, [$meal_id]);
-		 return $result;
+		$sql =  'DELETE FROM meals WHERE Meal_ID = ?';
+		$result = $this->executerRequete($sql, [$Meal_ID]);
+		return $result;
 	}
 	
 	//modifie meal
-	function modifyMeal($meal) {
+	function updateMeal($meal) {
 		
-		 $sql = 'UPDATE meals SET Cost_of_meal = ?, Other_Details = ?, Meal_Details = ? WHERE meal_id = ?';
+		$sql = 'UPDATE meals SET Cost_of_meal = ?, Other_Details = ?, Meal_Details = ? WHERE Meal_ID = ?';
 
-		$result = $this->executerRequete($sql, [$meal['Cost_of_meal'], $meal['Other_Details'], $meal['Meal_Details'], $meal[meal_id]]);
+		$result = $this->executerRequete($sql, [$meal['Cost_of_meal'], $meal['Other_Details'], $meal['Meal_Details'], $meal[Meal_ID]]);
 
-		  return $result;
+		return $result;
 	}
 
 }

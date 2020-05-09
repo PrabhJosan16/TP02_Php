@@ -40,7 +40,7 @@
 		
 
       
-	    <input type="hidden" name="meal_id" value="<?= $this->nettoyer($meal['meal_id']) ?>" /><br />
+	    <input type="hidden" name="Meal_ID" value="<?= $this->nettoyer($meal['Meal_ID']) ?>" /><br />
 
 	   
 		<input type="submit" value="Envoyer" />
