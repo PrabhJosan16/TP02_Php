@@ -3,6 +3,7 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8" />
+		<base href="<?= $racineWeb ?>" >
         <link rel="stylesheet" href="Contenu/css/style.css" />
         <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
         <title><?= $titre ?></title>   <!-- Élément spécifique -->
@@ -10,9 +11,9 @@
     <body>
         <div id="global">
             <header>
-                <a href="index.php"><h1 id="titreRestauration">Restauration</h1></a>
-                <p>Version MVC en PHP orienté-objet avec tests.</p>
-                <a href="index.php?action=apropos">
+                 <a href="index.php"><h1 id="titreRestauration">Restauration</h1></a>
+                <p>Version avec Cadriciel (Framework) MVC maison :.</p>
+                 <a href="apropos">
                     <h4>À propos</h4>
                 </a>
                 <a href="tests.php">
