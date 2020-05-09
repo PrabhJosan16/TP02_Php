@@ -9,18 +9,18 @@
 	
   <meal>
     <header>
-      <a /*href="<?= "index.php?action=meal&meal_id=" . $meal['meal_id'] ?>*/">
-        <h1 class="titreArticle"><?= $meal['detail'] ?></h1>
+      <a /*href="<?= "index.php?action=meal&meal_id=" . $meal['Meal_ID'] ?>*/">
+        <h1 class="titreArticle"><?= $meal['Other_Details'] ?></h1>
       </a>
-      <time><?= $meal['date'] ?></time>
-	   <p><?= $meal['description'] ?></p>
-    <p><?= $meal['prix'] ?></p>
+      <time><?= $meal['Date_of_meal'] ?></time>
+	   <p><?= $meal['Meal_Details'] ?></p>
+    <p><?= $meal['Cost_of_meal'] ?></p>
 
 
-	<p><a href="Meals/confirmer/<?= $meal['meal_id'] ?>" >
+	<p><a href="Meals/confirmer/<?= $meal['Meal_ID'] ?>" >
         [Supprimer]
     </a>
-	<p><a href="Meals/modifier/<?= $this->nettoyer($meal['meal_id'])?>" >
+	<p><a href="Meals/modifier/<?= $this->nettoyer($meal['Meal_ID'])?>" >
         [Modifier]
     </a>
 

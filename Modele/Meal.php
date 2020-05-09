@@ -7,7 +7,7 @@ class Meal extends Modele {
 	// Renvoie la liste de tous les meals
 	function getMeals() {
 	
-	  $sql ='SELECT  Customer_ID as id, Meal_ID as meal_id, Date_of_meal as date, Cost_of_meal as prix, Other_Details as detail, Meal_Details as description FROM  meals ';
+	  $sql ='SELECT  Customer_ID , Meal_ID , Date_of_meal , Cost_of_meal, Other_Details , Meal_Details  FROM  meals ';
 	   $meals = $this->executerRequete($sql);
 	  return $meals;
 	}
@@ -15,7 +15,7 @@ class Meal extends Modele {
 	// Renvoie les informations sur un meals
 	
 	    public function getMeal($idMeal) {
-       $sql = 'SELECT  Customer_ID as id, Meal_ID as meal_id, Date_of_meal as date, Cost_of_meal as prix, Other_Details as detail, Meal_Details as description FROM  meals where meal_id=?';
+       $sql = 'SELECT  Customer_ID , Meal_ID , Date_of_meal , Cost_of_meal , Other_Details , Meal_Details  FROM  meals where meal_id=?';
         $meal = $this->executerRequete($sql, array($idMeal));
         if ($meal->rowCount() > 0)
             return $meal->fetch();  // Accès à la première ligne de résultat

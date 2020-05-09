@@ -5,9 +5,9 @@
         <p><h1>
             Modifier?
         </h1>
-        <?= $meal['date'] ?>, <?= $meal['detail'] ?> <br/>
-        <strong><?= $meal['description'] ?></strong><br/>
-        <?= $meal['prix'] ?>
+        <?= $meal['Date_of_meal'] ?>, <?= $meal['Other_Details'] ?> <br/>
+        <strong><?= $meal['Meal_Details'] ?></strong><br/>
+        <?= $meal['Cost_of_meal'] ?>
         </p>
     </header>
 	<form action="Meals/miseAJour" method="post">

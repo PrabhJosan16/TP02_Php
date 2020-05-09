@@ -36,7 +36,7 @@ class ControleurMeals extends Controleur {
 	// Enregistre le nouvel meal et retourne à la liste des meals
     public function nouvelMeal() {
      
-            $meal['meal_id'] = $this->requete->getParametreId('meal_id');
+            
             $meal['Cost_of_meal'] = $this->requete->getParametre('Cost_of_meal');
             $meal['Other_Details'] = $this->requete->getParametre('Other_Details');
             $meal['Meal_Details'] = $this->requete->getParametre('Meal_Details');
@@ -87,6 +87,4 @@ class ControleurMeals extends Controleur {
        
         header('Location: index.php');
     }
-
-
 }
