@@ -1,7 +1,7 @@
 <?php
 
-require_once 'Vue/Vue.php';
-$meal = [
+require_once 'Framework/Vue.php';
+$meals = [
     [   'meal_id' => '18',
 		'detail' => 'Dessert',
         'description' => 'Gateau à la vanille',
@@ -21,5 +21,5 @@ $meal = [
 		'prix' => '25'
 	]
 ];
-$vue = new Vue('Meals');
-$vue->generer(['meals' => $meal]);
+$vue = new Vue('index', 'Meals');
+$vue->generer(['meals' => $meals]);
