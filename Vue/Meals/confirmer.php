@@ -16,7 +16,7 @@
 	 <input type="hidden" name="Meal_ID" value="<?= $this->nettoyer($meal['Meal_ID']) ?>" /><br />
     <input type="submit" value="Oui" />
 </form>
-<form action="Meals/lire" method="post">
+<form action="Meals/index" method="post">
 		<p>
 		<input type="submit" value="Annuler" />
 		</p>
