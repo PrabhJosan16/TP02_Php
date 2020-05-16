@@ -12,8 +12,11 @@
 <ul>
     <li>L'application "Restauration" permet d' ajouter, modifier et de
         supprimer des plats (meals).</li>
+				<li>L'application est faites par un modele Cadricel.
+		</li>
     <li>La page d'Accueil présente la liste des plats avec leurs prix, et les détails:
 		</li>
+
     <ul>
         <li>Cette version n'offre pas encore la l'addition, modification et supression de deux tables. Il
             n'y a qu'une seule table (meals) pour l'instant. <br>
