@@ -1,7 +1,11 @@
 <?php $this->titre  = 'Restauration'; ?>
 
-<a href="Meals/ajouter">
-    <h2 class="titreArticle">Ajouter un Meal</h2>
+
+
+
+
+<a href="Meals/afficherClient">
+    <h2 class="titreArticle">AfficherClient</h2>
 </a>
 
 <?php foreach ($meals as $meal): 
@@ -17,12 +21,7 @@
     <p><?= $meal['Cost_of_meal'] ?></p>
 
 
-	<p><a href="Meals/confirmer/<?= $meal['Meal_ID'] ?>" >
-        [Supprimer]
-    </a>
-	<p><a href="Meals/modifier/<?= $this->nettoyer($meal['Meal_ID'])?>" >
-        [Modifier]
-    </a>
+
 
 	
 

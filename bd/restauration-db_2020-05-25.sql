@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 03, 2020 at 05:44 PM
+-- Generation Time: May 25, 2020 at 08:47 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -200,7 +200,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `meals`
 --
 ALTER TABLE `meals`
-  MODIFY `Meal_ID` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `Meal_ID` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `menus`

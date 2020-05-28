@@ -20,12 +20,15 @@
                     <h3>TESTS</h3>
                 </a>
             </header>
-            <?php
-            if (isset($_SESSION['h204a4message']) and $_SESSION['h204a4message'] != "") {
-                echo '<span style="color : red;">' . $_SESSION['h204a4message'] . '</span><br/>';
-                $_SESSION['h204a4message'] = ""; // Le message n'est affiché qu'une seule fois
-            }
-            ?>
+		     <a href="<?= $utilisateur != '' ? 'Admin' : ''; ?>Meals">
+			 <?php if ($utilisateur != '') : ?>
+                <h3>Bonjour <?= $utilisateur ?>,
+                    <a href="Utilisateurs/deconnecter"><small>[Se déconnecter]</small></a>
+                </h3>
+            <?php else : ?>
+            <h3>[<a href="Utilisateurs/index">Se connecter</a>] <small>(admin/admin)</small></h3>
+            <?php endif; ?>
+           
             <div id="contenu">
                 <?= $contenu ?>   <!-- Élément spécifique -->
             </div> <!-- #contenu -->
