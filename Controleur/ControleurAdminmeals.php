@@ -5,7 +5,7 @@ require_once 'Modele/Meal.php';
 require_once 'Modele/Customer.php';
 
 
-class ControleurMeals extends ControleurAdmin {
+class ControleurAdminMeals extends ControleurAdmin {
 
     private $meal;
    private $customer;

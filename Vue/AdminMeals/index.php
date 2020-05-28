@@ -18,11 +18,11 @@
   <meal>
     <header>
       <a /*href="<?= "index.php?action=meal&meal_id=" . $meal['Meal_ID'] ?>*/">
-        <h1 class="titreArticle"><?=<?= $this->nettoyer($meal['Other_Details']) ?></h1>
+        <h1 class="titreArticle"><?= $meal['Other_Details'] ?></h1>
       </a>
-      <time><?= $this->nettoyer( $meal['Date_of_meal']) ?></time>
-	   <p><?= <?= $this->nettoyer($meal['Meal_Details']) ?></p>
-    <p><?= <?= $this->nettoyer($meal['Cost_of_meal']) ?></p>
+      <time><?= $meal['Date_of_meal'] ?></time>
+	   <p><?= $meal['Meal_Details'] ?></p>
+    <p><?= $meal['Cost_of_meal'] ?></p>
 
 
 	<p><a href="AdminMeals/confirmer/<?= $meal['Meal_ID'] ?>" >
