@@ -1,14 +1,14 @@
 <?php $this->titre  = 'Restauration'; ?>
 
-<a href="Meals/ajouter">
+<a href="AdminMeals/ajouter">
     <h2 class="titreArticle">Ajouter un Meal</h2>
 </a>
 
-<a href="Customers/ajouter">
+<a href="AdminCustomer/ajouter">
     <h2 class="titreArticle">Ajouter un Client</h2>
 </a>
 
-<a href="Meals/afficherClient">
+<a href="AdminCustomer/afficherClient">
     <h2 class="titreArticle">AfficherClient</h2>
 </a>
 

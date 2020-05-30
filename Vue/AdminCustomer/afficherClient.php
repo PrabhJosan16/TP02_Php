@@ -14,10 +14,10 @@
 
 
 
-	<p><a href="AdminMeals/confirmer/<?= $customer['Customer_ID'] ?>" >
+	<p><a href="AdminCustomer/confirmerCustomer/<?= $customer['Customer_ID'] ?>" >
         [Supprimer]
     </a>
-	<p><a href="AdminMeals/modifier/<?= $this->nettoyer($customer['Customer_ID'])?>" >
+	<p><a href="AdminCustomer/modifier/<?= $this->nettoyer($customer['Customer_ID'])?>" >
         [Modifier]
     </a>
 

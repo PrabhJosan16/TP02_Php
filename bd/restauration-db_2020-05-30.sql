@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 25, 2020 at 08:47 PM
+-- Generation Time: May 30, 2020 at 05:47 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -40,7 +40,13 @@ CREATE TABLE `customers` (
 
 INSERT INTO `customers` (`Customer_ID`, `Customer_Details`, `contact`) VALUES
 (8, 'John', 'john@gmail.com'),
-(9, 'Daniel', 'daniel@gmail.com');
+(9, 'Daniel', 'daniel@gmail.com'),
+(10, 'Prabh', 'prabh16@gmail.com'),
+(11, 'allo', 'ssss'),
+(12, 'sdgfsgfs', 'sdfdsf'),
+(13, 'asdsadsad', 'ASDDSADSADASD'),
+(14, 'erwfgerwf', 'erwewtretretert'),
+(15, 'sdfsd', 'sdfdsf');
 
 -- --------------------------------------------------------
 
@@ -138,6 +144,27 @@ CREATE TABLE `staff` (
   `Other_Detail` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `utilisateurs`
+--
+
+CREATE TABLE `utilisateurs` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `identifiant` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `mot_de_passe` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `utilisateurs`
+--
+
+INSERT INTO `utilisateurs` (`id`, `nom`, `identifiant`, `mot_de_passe`) VALUES
+(1, 'admin', 'admin', 'admin'),
+(2, 'prabh', 'prabh', 'prabh');
+
 --
 -- Indexes for dumped tables
 --
@@ -194,13 +221,13 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `Customer_ID` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `Customer_ID` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `meals`
 --
 ALTER TABLE `meals`
-  MODIFY `Meal_ID` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `Meal_ID` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `menus`

@@ -3,7 +3,7 @@
 <header>
     <h1 id="titreReponses">Ajouter un meal :</h1>
 </header>
-<form action="Adminmeals/nouvelMeal" method="post">
+<form action="Meals/nouvelMeal" method="post">
  
     <h2>Ajouter un plat</h2>
 	

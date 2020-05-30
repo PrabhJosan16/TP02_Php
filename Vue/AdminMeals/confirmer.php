@@ -12,14 +12,14 @@
     </header>
 </meal>
 
-<form action="Meals/supprimer" method="post">
+<form action="AdminMeals/supprimer" method="post">
 	 <input type="hidden" name="Meal_ID" value="<?= $this->nettoyer($meal['Meal_ID']) ?>" /><br />
     <input type="submit" value="Oui" />
 </form>
-<form action="Meals/index" method="post">
-		<p>
+<form action="AdminMeals/index" method="post">
+	<p>
 		<input type="submit" value="Annuler" />
-		</p>
-		</form>
+	</p>
+</form>
 
 

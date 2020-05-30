@@ -31,4 +31,22 @@ class ControleurMeals extends Controleur {
         $erreur = $this->requete->getSession()->existeAttribut("erreur") ? $this->requete->getsession()->getAttribut("erreur") : '';
         $this->genererVue(['meal' => $meal,  'erreur' => $erreur]);
     }
+		public function ajouter() {
+        $this->genererVue();
+    }
+	
+	// Enregistre le nouvel meal et retourne à la liste des meals
+    public function nouvelMeal() {
+     
+            
+            $meal['Cost_of_meal'] = $this->requete->getParametre('Cost_of_meal');
+            $meal['Other_Details'] = $this->requete->getParametre('Other_Details');
+            $meal['Meal_Details'] = $this->requete->getParametre('Meal_Details');
+            $this->meal->setMeal($meal);
+        
+        $this->executerAction('index');
+    }
+
+	
+	
 }

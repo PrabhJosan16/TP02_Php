@@ -11,18 +11,6 @@
         <h1 class="titreArticle"><?= $customer['Customer_Details'] ?></h1>
       </a>
 	   <p><?= $customer['contact'] ?></p>
-
-
-
-	<p><a href="Meals/confirmer/<?= $customer['Customer_ID'] ?>" >
-        [Supprimer]
-    </a>
-	<p><a href="Meals/modifier/<?= $this->nettoyer($customer['Customer_ID'])?>" >
-        [Modifier]
-    </a>
-
-	
-
     </header>
   </customer>
  

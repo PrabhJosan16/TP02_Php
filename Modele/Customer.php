@@ -29,7 +29,13 @@ class Customer extends Modele {
         return $result;
 	}
 	
+		// Supprime un meal
+	function deleteMeal($Customer_ID) {
 	
+		$sql = 'DELETE FROM customers WHERE Customer_ID = ?';
+		$result = $this->executerRequete($sql, [$Customer_ID]);
+		return $result;
+	}
 	
 	
 	
