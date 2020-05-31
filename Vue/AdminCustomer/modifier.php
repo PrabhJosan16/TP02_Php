@@ -5,47 +5,22 @@
         <p><h1>
             Modifier?
         </h1>
-        <?= $meal['Date_of_meal'] ?>, <?= $meal['Other_Details'] ?> <br/>
-        <strong><?= $meal['Meal_Details'] ?></strong><br/>
-        <?= $meal['Cost_of_meal'] ?>
+        <?= $customer['Customer_Details'] ?> <br/>
+        <strong><?= $customer['contact'] ?></strong><br/>
         </p>
     </header>
-	<form action="AdminMeals/miseAJour" method="post">
+<form action="Customers/nouvelCustomer" method="post">
  
-    <h2>Modifier un plat</h2>
-	
-        <p>
-			<label for="Cost_of_meal">Coût du plat</label> :  <input type="number" name="Cost_of_meal" id="Cost_of_meal" value="<?= $this->nettoyer($meal['Cost_of_meal'])?>" /><br />
-			
+    <h2>Ajouter un Client</h2>
+        <label for="Customer_Details"> Nom du Client :</label> 
+		<input type="text" name="Customer_Details" id="Customer_Details" /><br />
 		
-
-			
-			
-			<label for="Other_Details">detail</label> 
-			
-				<select name="Other_Details" value="<?= $this->nettoyer($meal['Other_Details'])?>" >
-
-					<option value="Entrée">Entrée</option>
-
-					<option value="Salade">Salade</option>
-
-					<option value="Plat Principale">Plat Principale</option>
-
-					<option value="Dessert">Dessert</option>
-
-				</select><br />
-			
-			<label for="Meal_Details">description</label> :  <textarea type="text" name="Meal_Details" id="Meal_Details" value="<?= $this->nettoyer($meal['Meal_Details'])?>" >Écrivez votre commentaire ici</textarea><br />
+		<label for="contact"> Email du Client :</label> 
+		<input type="text" name="contact" id="contact" /><br />
 		
-			
-
-		  
-			<input type="hidden" name="Meal_ID" value="<?= $this->nettoyer($meal['Meal_ID']) ?>" /><br />
-
-		   
-			<input type="submit" value="Envoyer" />
-		</p>
-		   		
+		
+        <input type="submit" value="Envoyer" />
+	</p>
 </form>
  
 </meal>

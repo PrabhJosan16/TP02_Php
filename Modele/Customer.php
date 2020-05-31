@@ -13,7 +13,7 @@ class Customer extends Modele {
 
 	// Renvoie un customer spécifique
 	function getCustomer($idCustomer) {
-		$sql = 'SELECT from customers WHERE Customer_ID = ?';
+		$sql = 'SELECT Customer_ID, Customer_Details, contact from customers WHERE Customer_ID=?';
         $customer = $this->executerRequete($sql, array($idCustomer));
         if ($customer->rowCount() > 0){
             return $customer->fetch();  // Accès à la première ligne de résultat
@@ -21,7 +21,7 @@ class Customer extends Modele {
             throw new Exception("Aucun customer ne correspond à l'identifiant '$idCustomer'");
 		}
     }
-	
+
 	
 	function setCustomer($customer) {	
 		$sql = 'INSERT INTO customers ( Customer_Details , contact ) VALUES(?,?)' ;
@@ -29,23 +29,20 @@ class Customer extends Modele {
         return $result;
 	}
 	
-		// Supprime un meal
-	function deleteMeal($Customer_ID) {
+		// Supprime un customer
+	function deleteCustomer($Customer_ID) {
 	
 		$sql = 'DELETE FROM customers WHERE Customer_ID = ?';
 		$result = $this->executerRequete($sql, [$Customer_ID]);
 		return $result;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+		//modifie customer
+	function updateMeal($customer) {
+		
+		$sql = 'UPDATE customers SET Customer_Details = ?, contact = ? WHERE Customer_ID = ?';
+
+		$result = $this->executerRequete($sql, [$customer['Customer_Details'], $customer['contact'], $customer[Customer_ID]]);
+
+		return $result;
+	}
 }
-
-
-
-	

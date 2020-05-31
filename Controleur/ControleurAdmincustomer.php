@@ -61,7 +61,7 @@ class ControleurAdminCustomer extends ControleurAdmin {
             $customer['Customer_ID'] = $this->requete->getParametre('Customer_ID');
             $customer['Customer_Details'] = $this->requete->getParametre('Customer_Details');
             $customer['contact'] = $this->requete->getParametre('contact');
-            $this->customer->updateMeal($customer);
+            $this->customer->updateCustomer($customer);
         
         $this->executerAction('index');
     }
@@ -69,18 +69,18 @@ class ControleurAdminCustomer extends ControleurAdmin {
 	
 
 	
-	// Supprimer un commentaire
+	// Supprimer un customer
     public function supprimer() {
         $id = $this->requete->getParametreId("Customer_ID");
-        // Lire le commentaire afin d'obtenir le id de l'article associé
+        // Lire le customer afin d'obtenir le id de l'article associé
         $customer = $this->customer->getCustomer($id);
-        // Supprimer le commentaire à l'aide du modèle
+        // Supprimer le customer à l'aide du modèle
         $this->customer->deleteCustomer($id);
-        //Recharger la page pour mettre à jour la liste des commentaires associés
+        //Recharger la page pour mettre à jour la liste des customer associés
         $this->executerAction('index');
     }
 	
-	
+
 	
 	
 	

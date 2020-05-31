@@ -1,4 +1,4 @@
-<?php $titre = 'Restauration - Supprimer'; ?>
+<?php $this->titre  = 'Restauration - Supprimer'; ?>
 
 <customer>
     <header>
@@ -6,7 +6,7 @@
             Supprimer?
         </h1>
 			 
-        <?= $customer['Customer_Details'] ?>, <?= $meal['Other_Details'] ?> <br/>
+        <?= $customer['Customer_Details'] ?> <br/>
         <strong><?= $customer['contact'] ?></strong><br/>
       
         </p>
