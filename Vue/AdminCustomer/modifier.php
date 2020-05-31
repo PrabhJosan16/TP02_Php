@@ -15,7 +15,7 @@
         <label for="Customer_Details"> Nom du Client :</label> 
 		<input type="text" name="Customer_Details" id="Customer_Details" /><br />
 		
-		<label for="contact"> Email du Client :</label> 
+		<label for="contact"> Méthode de contacte du Client :</label> 
 		<input type="text" name="contact" id="contact" /><br />
 		
 		

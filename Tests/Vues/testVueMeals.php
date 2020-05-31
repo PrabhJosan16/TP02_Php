@@ -22,4 +22,4 @@ $meals = [
 	]
 ];
 $vue = new Vue('index', 'Meals');
-$vue->generer(['meals' => $meals]);
+$vue->generer(['meals' => $meals], null);

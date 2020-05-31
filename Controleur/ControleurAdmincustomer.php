@@ -11,7 +11,7 @@ class ControleurAdminCustomer extends ControleurAdmin {
     }
 	
 	public function index() {
-        $customers = $this->customer->getCustomer();
+        $customers = $this->customer->getCustomers();
         $this->genererVue(['customers' => $customers]);
     }
 	
@@ -33,9 +33,9 @@ class ControleurAdminCustomer extends ControleurAdmin {
         $this->genererVue(['erreur' => $erreur]);
     }
 	public function nouvelCustomer() {
-        $client['Customer_Details'] = $this->requete->getParametre('Customer_Details');
-        $client['contact'] = $this->requete->getParametre('contact');
-        $this->customer->setCustomer($client);
+        $customer['Customer_Details'] = $this->requete->getParametre('Customer_Details');
+        $customer['contact'] = $this->requete->getParametre('contact');
+        $this->customer->setCustomer($customer);
         
         $this->rediriger('index.php' );
     }
@@ -47,10 +47,10 @@ class ControleurAdminCustomer extends ControleurAdmin {
         $this->genererVue(['customer' => $customer]);
     }
 
-	// Confirmer la suppression d'un commentaire
+	// Confirmer la suppression d'un customer
     public function confirmerCustomer() {
         $id = $this->requete->getParametreId('id');
-        // Lire le commentaire à l'aide du modèle
+        // Lire le customer à l'aide du modèle
         $customer = $this->customer->getCustomer($id);
         $this->genererVue(['customer' => $customer]);
     }
@@ -66,9 +66,7 @@ class ControleurAdminCustomer extends ControleurAdmin {
         $this->executerAction('index');
     }
 
-	
 
-	
 	// Supprimer un customer
     public function supprimer() {
         $id = $this->requete->getParametreId("Customer_ID");
@@ -77,7 +75,7 @@ class ControleurAdminCustomer extends ControleurAdmin {
         // Supprimer le customer à l'aide du modèle
         $this->customer->deleteCustomer($id);
         //Recharger la page pour mettre à jour la liste des customer associés
-        $this->executerAction('index');
+        $this->executerAction('afficherClient');
     }
 	
 

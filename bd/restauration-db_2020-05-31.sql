@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 30, 2020 at 05:47 PM
+-- Generation Time: May 31, 2020 at 07:45 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.4.0
 
@@ -39,14 +39,9 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`Customer_ID`, `Customer_Details`, `contact`) VALUES
-(8, 'John', 'john@gmail.com'),
-(9, 'Daniel', 'daniel@gmail.com'),
-(10, 'Prabh', 'prabh16@gmail.com'),
-(11, 'allo', 'ssss'),
-(12, 'sdgfsgfs', 'sdfdsf'),
-(13, 'asdsadsad', 'ASDDSADSADASD'),
-(14, 'erwfgerwf', 'erwewtretretert'),
-(15, 'sdfsd', 'sdfdsf');
+(19, 'Prabhjot', 'Téléphone'),
+(20, 'Alain ', 'Courriel'),
+(29, 'Robert', 'Texto');
 
 -- --------------------------------------------------------
 
@@ -221,13 +216,13 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `Customer_ID` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `Customer_ID` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `meals`
 --
 ALTER TABLE `meals`
-  MODIFY `Meal_ID` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `Meal_ID` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `menus`
